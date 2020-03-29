@@ -1,0 +1,34 @@
+apply plugin: 'groovy'
+
+apply plugin: 'maven'
+
+dependencies {
+
+    implementation gradleApi() //gradle sdk
+
+    implementation localGroovy() //groovy sdk
+
+    implementation 'com.android.tools.build:gradle:3.5.3'
+
+}
+
+repositories {
+
+    jcenter()
+
+    google()
+
+}
+
+group='com.francis.plugin'
+version='1.0.0'
+uploadArchives {
+    repositories {
+        mavenDeployer {
+//            pom.groupId = 'com.francis.plugin'
+//            pom.artifactId = 'com.francis.plugin'
+//            pom.version = 1.0
+            repository (url: uri('D:\\workspace\\TestPlugin\\repos'))
+        }
+    }
+}
